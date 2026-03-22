@@ -16,16 +16,7 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-
-            /* ✅ LIGHT AESTHETIC BACKGROUND (only change) */
-            background: linear-gradient(
-                135deg,
-                #f8fbff,
-                #eef2ff,
-                #f3e8ff,
-                #ffffff
-            );
-            background-attachment: fixed;
+            background: #fdfdfd;
         }
 
         /* Navigation */
@@ -122,12 +113,16 @@
             gap: 25px;
         }
 
+        /* ✅ ONLY CHANGE: GLASSY CARDS */
         .course-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 25px;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border-top: 5px solid #4a90e2;
+            border: 1px solid rgba(255,255,255,0.4);
             transition: all 0.3s ease;
         }
 
@@ -225,3 +220,90 @@
     </style>
 </head>
 <body>
+
+  <header>
+        <nav>
+            <div class="logo">Mounika Sri Academy</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="iso-badge">✓ ISO CERTIFIED COACHING CENTRE</div>
+        <h1>Mounika Sri Academy</h1>
+        <p>Providing Quality Education and Proven Results for Over 20 Years</p>
+    </section>
+
+    <div class="trust-bar">
+        <span>🏆 20+ Years Experience</span>
+        <span>✅ ISO Certified</span>
+        <span>📍 Guntur, AP</span>
+    </div>
+
+    <section id="courses">
+        <h2>Our Specialized Programs</h2>
+        <div class="courses-grid">
+            <div class="course-card"><h3>📘 Competitive Entrance</h3><p>Coaching for Navodaya, Sainik School, RMS, RIMC, and Gurukul entrance exams.</p></div>
+            <div class="course-card"><h3>🧪 Foundation Courses</h3><p>Strong IIT-JEE and NEET foundation for long-term success in medicine and engineering.</p></div>
+            <div class="course-card"><h3>👨‍🏫 Academic Tuitions</h3><p>Comprehensive subject coaching for students from 1st to 10th Class and Intermediate.</p></div>
+            <div class="course-card"><h3>🗣️ Communication Skills</h3><p>Professional Spoken English and Spoken Hindi classes to build student confidence.</p></div>
+            <div class="course-card"><h3>✍️ Skill Development</h3><p>Specialized training in Handwriting, Drawing, and Memory improvement techniques.</p></div>
+            <div class="course-card"><h3>🏅 Scholarship Exams</h3><p>Expert preparation for NMMS, Olympiads, and various national scholarship tests.</p></div>
+        </div>
+    </section>
+
+<section id="gallery">
+  <h2>Our Gallery</h2>
+  
+  <div class="gallery-grid">
+    <img src="photo1.png">
+    <img src="photo2.png">
+    <img src="photo3.png">
+    <img src="photo4.png"> 
+    <img src="photo5.png">  
+  </div>
+</section>
+
+    <section id="contact">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p style="margin-bottom: 30px; color: #666;">Contact an ISO certified institution today to secure your child's academic future.</p>
+                
+                <div class="info-detail">
+                    <strong>Call or WhatsApp</strong>
+                    <p>+91 94924 83509</p>
+                </div>
+                
+                <div class="info-detail">
+                    <strong>Location</strong>
+                    <p>Suryadevara Babu Gari House, Suryadevarapeta,<br>
+                    Kamma Seshayya Ground, Etukuru Road,<br>
+                    Guntur, Andhra Pradesh</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Parent/Student Name" required>
+                    <input type="tel" placeholder="Contact Number" required>
+                    <textarea placeholder="Tell us which course you are interested in..." rows="5"></textarea>
+                    <button type="submit" class="btn-submit">Inquire Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Mounika Sri Academy</strong></p>
+        <p>An ISO Certified Coaching Institution</p>
+        <p style="font-size: 0.8rem; margin-top: 15px;">&copy; 2024 All Rights Reserved | Etukuru Road, Guntur</p>
+    </footer>
+
+</body>
+</html>
