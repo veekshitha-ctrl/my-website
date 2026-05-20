@@ -1,243 +1,640 @@
-<!-- updated now -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Mounika Sri Academy - ISO Certified Coaching Centre</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #fdfdfd;
+            color: #1e293b;
+
+            background:
+                radial-gradient(circle at top left,
+                rgba(74,144,226,0.18),
+                transparent 35%),
+
+                radial-gradient(circle at bottom right,
+                rgba(118,75,162,0.18),
+                transparent 35%),
+
+                #f8fafc;
+
+            overflow-x: hidden;
+
+            transition:
+                background 0.4s ease,
+                color 0.4s ease;
         }
 
-        /* Navigation */
-        header {
-            background: #4a90e2;
+        /* =========================
+           DARK MODE
+        ========================== */
+
+        .dark-mode {
+            background:
+                radial-gradient(circle at top left,
+                rgba(59,130,246,0.12),
+                transparent 35%),
+
+                radial-gradient(circle at bottom right,
+                rgba(168,85,247,0.12),
+                transparent 35%),
+
+                #020617;
+
+            color: #f8fafc;
+        }
+
+        .dark-mode header {
+            background: rgba(15,23,42,0.75);
+        }
+
+        .dark-mode .course-card,
+        .dark-mode .contact-form,
+        .dark-mode .trust-bar {
+            background: rgba(255,255,255,0.06);
             color: white;
-            padding: 1rem 0;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .dark-mode .course-card h3,
+        .dark-mode h2,
+        .dark-mode .logo {
+            color: white;
+        }
+
+        .dark-mode .info-detail strong {
+            color: #60a5fa;
+        }
+
+        .dark-mode input,
+        .dark-mode textarea {
+            background: rgba(255,255,255,0.05);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .dark-mode #contact {
+            background: transparent;
+        }
+
+        .dark-mode footer {
+            background: #020617;
+        }
+
+        .dark-mode .trust-bar span {
+            color: #cbd5e1;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+            background: rgba(74,144,226,0.72);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+            transition: 0.4s ease;
         }
 
         nav {
-            max-width: 1100px;
-            margin: 0 auto;
+            max-width: 1150px;
+            margin: auto;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+
+            padding: 18px 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
             display: flex;
+            gap: 25px;
             list-style: none;
-            gap: 20px;
+            align-items: center;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
+            position: relative;
+            transition: 0.3s;
         }
 
-        /* Hero Section */
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .dark-btn {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+
+            padding: 10px 16px;
+
+            border-radius: 14px;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .dark-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.22);
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
         .hero {
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.9), rgba(118, 75, 162, 0.9)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1350&q=80');
+            background:
+                linear-gradient(
+                135deg,
+                rgba(74,144,226,0.78),
+                rgba(118,75,162,0.78)
+                ),
+
+                url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1350&q=80');
+
             background-size: cover;
             background-position: center;
-            height: 65vh;
+
+            height: 78vh;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
             text-align: center;
+
             color: white;
-            margin-top: 60px;
+
             padding: 20px;
+
+            margin-top: 70px;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+            animation: fadeUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            opacity: 0.95;
+
+            animation: fadeUp 1.3s ease;
+        }
+
         .iso-badge {
-            background: #ffc107;
-            color: #333;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
+            background: rgba(255,255,255,0.18);
 
-        /* Trust Section */
-        .trust-bar {
-            background: #fff;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-        .trust-bar span {
-            margin: 0 20px;
+            backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            padding: 8px 18px;
+
+            border-radius: 999px;
+
             font-weight: 600;
-            color: #666;
+
+            margin-bottom: 24px;
+
+            animation: floaty 3s ease-in-out infinite;
         }
 
-        /* Courses Section */
-        #courses {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
+        /* =========================
+           TRUST BAR
+        ========================== */
+
+        .trust-bar {
+            background: rgba(255,255,255,0.5);
+
+            backdrop-filter: blur(10px);
+
+            padding: 22px;
+
+            text-align: center;
+
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .trust-bar span {
+            margin: 0 18px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 90px 20px;
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.2rem;
-            color: #2c3e50;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #1e293b;
+        }
+
+        /* =========================
+           COURSES
+        ========================== */
+
+        #courses {
+            max-width: 1150px;
+            margin: auto;
         }
 
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 28px;
         }
 
-        /* ✅ ONLY CHANGE: GLASSY CARDS */
         .course-card {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 5px solid #4a90e2;
-            border: 1px solid rgba(255,255,255,0.4);
-            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.55);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border-radius: 24px;
+
+            padding: 30px;
+
+            border: 1px solid rgba(255,255,255,0.3);
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+            transition: 0.35s ease;
+
+            opacity: 0;
+            transform: translateY(40px);
+
+            animation: reveal 1s forwards;
         }
 
-        .course-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .course-card h3 { color: #4a90e2; margin-bottom: 10px; }
+        .course-card:hover {
+            transform: translateY(-10px) scale(1.02);
 
-        /* Gallery Section */
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+
+        .course-card h3 {
+            margin-bottom: 12px;
+            color: #2563eb;
+            font-size: 1.2rem;
+        }
+
+        /* =========================
+           GALLERY
+        ========================== */
+
         #gallery {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
+            max-width: 1150px;
+            margin: auto;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 20px;
         }
 
         .gallery-grid img {
             width: 100%;
-            height: 150px;
+            height: 180px;
+
             object-fit: cover;
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            border-radius: 22px;
+
+            transition: 0.35s ease;
+
             cursor: pointer;
+
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+            opacity: 0;
+            transform: translateY(40px);
+
+            animation: reveal 1s forwards;
         }
 
         .gallery-grid img:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.16);
         }
 
-        /* Contact Section */
+        /* =========================
+           CONTACT
+        ========================== */
+
         #contact {
-            background: #f4f7f6;
-            padding: 80px 20px;
+            background: transparent;
         }
 
         .contact-content {
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 1100px;
+
+            margin: auto;
+
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+
+            grid-template-columns: 1fr 1.1fr;
+
             gap: 50px;
         }
 
-        .info-detail { margin-bottom: 30px; }
-        .info-detail strong { color: #4a90e2; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; }
-        .info-detail p { font-size: 1.1rem; margin-top: 5px; }
+        .contact-info {
+            opacity: 0;
+            transform: translateY(40px);
 
-        .contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            animation: reveal 1s forwards;
         }
 
-        form input, form textarea {
+        .info-detail {
+            margin-bottom: 28px;
+        }
+
+        .info-detail strong {
+            color: #2563eb;
+
+            font-size: 0.85rem;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+        .info-detail p {
+            margin-top: 8px;
+            font-size: 1.05rem;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.6);
+
+            backdrop-filter: blur(16px);
+
+            border: 1px solid rgba(255,255,255,0.3);
+
+            border-radius: 28px;
+
+            padding: 35px;
+
+            box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+
+            opacity: 0;
+            transform: translateY(40px);
+
+            animation: reveal 1s forwards;
+        }
+
+        input,
+        textarea {
             width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #eee;
-            background: #f9f9f9;
-            border-radius: 8px;
+
+            padding: 16px;
+
+            margin-bottom: 18px;
+
+            border-radius: 14px;
+
+            border: 1px solid #e2e8f0;
+
+            background: rgba(255,255,255,0.75);
+
+            font-family: inherit;
+
+            transition: 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+
+            border-color: #60a5fa;
+
+            box-shadow: 0 0 0 4px rgba(96,165,250,0.18);
         }
 
         .btn-submit {
-            background: #4a90e2;
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 8px;
-            cursor: pointer;
             width: 100%;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: background 0.3s;
+
+            border: none;
+
+            background: linear-gradient(
+                135deg,
+                #4a90e2,
+                #7c3aed
+            );
+
+            color: white;
+
+            padding: 16px;
+
+            border-radius: 14px;
+
+            font-size: 1rem;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.35s ease;
         }
 
-        .btn-submit:hover { background: #357abd; }
+        .btn-submit:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 14px 25px rgba(74,144,226,0.3);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
-            background: #2c3e50;
-            color: #bdc3c7;
+            background: #0f172a;
+
+            color: #cbd5e1;
+
             text-align: center;
-            padding: 40px 20px;
+
+            padding: 50px 20px;
         }
 
+        /* =========================
+           ANIMATIONS
+        ========================== */
+
+        @keyframes floaty {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
         @media (max-width: 768px) {
-            .contact-content { grid-template-columns: 1fr; }
-            .nav-links { display: flex; flex-direction: column; }
-            .hero h1 { font-size: 2.2rem; }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .trust-bar span {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
+
 <body>
 
-  <header>
+    <!-- HEADER -->
+
+    <header>
         <nav>
-            <div class="logo">Mounika Sri Academy</div>
+
+            <div class="logo">
+                Mounika Sri Academy
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
+            <button class="dark-btn" onclick="toggleDarkMode()">
+                🌙 Dark Mode
+            </button>
+
         </nav>
     </header>
 
+    <!-- HERO -->
+
     <section id="home" class="hero">
-        <div class="iso-badge">✓ ISO CERTIFIED COACHING CENTRE</div>
+
+        <div class="iso-badge">
+            ✓ ISO CERTIFIED COACHING CENTRE
+        </div>
+
         <h1>Mounika Sri Academy</h1>
-        <p>Providing Quality Education and Proven Results for Over 20 Years</p>
+
+        <p>
+            Providing Quality Education and Proven Results
+            for Over 20 Years
+        </p>
+
     </section>
+
+    <!-- TRUST BAR -->
 
     <div class="trust-bar">
         <span>🏆 20+ Years Experience</span>
@@ -245,65 +642,175 @@
         <span>📍 Guntur, AP</span>
     </div>
 
+    <!-- COURSES -->
+
     <section id="courses">
+
         <h2>Our Specialized Programs</h2>
+
         <div class="courses-grid">
-            <div class="course-card"><h3>📘 Competitive Entrance</h3><p>Coaching for Navodaya, Sainik School, RMS, RIMC, and Gurukul entrance exams.</p></div>
-            <div class="course-card"><h3>🧪 Foundation Courses</h3><p>Strong IIT-JEE and NEET foundation for long-term success in medicine and engineering.</p></div>
-            <div class="course-card"><h3>👨‍🏫 Academic Tuitions</h3><p>Comprehensive subject coaching for students from 1st to 10th Class and Intermediate.</p></div>
-            <div class="course-card"><h3>🗣️ Communication Skills</h3><p>Professional Spoken English and Spoken Hindi classes to build student confidence.</p></div>
-            <div class="course-card"><h3>✍️ Skill Development</h3><p>Specialized training in Handwriting, Drawing, and Memory improvement techniques.</p></div>
-            <div class="course-card"><h3>🏅 Scholarship Exams</h3><p>Expert preparation for NMMS, Olympiads, and various national scholarship tests.</p></div>
+
+            <div class="course-card">
+                <h3>📘 Competitive Entrance</h3>
+                <p>
+                    Coaching for Navodaya, Sainik School,
+                    RMS, RIMC, and Gurukul entrance exams.
+                </p>
+            </div>
+
+            <div class="course-card">
+                <h3>🧪 Foundation Courses</h3>
+                <p>
+                    Strong IIT-JEE and NEET foundation
+                    for long-term success.
+                </p>
+            </div>
+
+            <div class="course-card">
+                <h3>👨‍🏫 Academic Tuitions</h3>
+                <p>
+                    Comprehensive coaching from
+                    1st to 10th Class and Intermediate.
+                </p>
+            </div>
+
+            <div class="course-card">
+                <h3>🗣️ Communication Skills</h3>
+                <p>
+                    Spoken English and Spoken Hindi classes
+                    to improve confidence.
+                </p>
+            </div>
+
+            <div class="course-card">
+                <h3>✍️ Skill Development</h3>
+                <p>
+                    Training in handwriting, drawing,
+                    and memory improvement.
+                </p>
+            </div>
+
+            <div class="course-card">
+                <h3>🏅 Scholarship Exams</h3>
+                <p>
+                    Expert preparation for NMMS,
+                    Olympiads, and scholarship exams.
+                </p>
+            </div>
+
         </div>
+
     </section>
 
-<section id="gallery">
-  <h2>Our Gallery</h2>
-  
-  <div class="gallery-grid">
-    <img src="photo1.png">
-    <img src="photo2.png">
-    <img src="photo3.png">
-    <img src="photo4.png"> 
-    <img src="photo5.png">  
-  </div>
-</section>
+    <!-- GALLERY -->
+
+    <section id="gallery">
+
+        <h2>Our Gallery</h2>
+
+        <div class="gallery-grid">
+
+            <img src="photo1.png" alt="">
+            <img src="photo2.png" alt="">
+            <img src="photo3.png" alt="">
+            <img src="photo4.png" alt="">
+            <img src="photo5.png" alt="">
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
 
     <section id="contact">
+
         <div class="contact-content">
+
             <div class="contact-info">
+
                 <h2>Get In Touch</h2>
-                <p style="margin-bottom: 30px; color: #666;">Contact an ISO certified institution today to secure your child's academic future.</p>
-                
+
+                <p style="margin-bottom: 30px; color: #64748b;">
+                    Contact an ISO certified institution today
+                    to secure your child's academic future.
+                </p>
+
                 <div class="info-detail">
                     <strong>Call or WhatsApp</strong>
                     <p>+91 94924 83509</p>
                 </div>
-                
+
                 <div class="info-detail">
                     <strong>Location</strong>
-                    <p>Suryadevara Babu Gari House, Suryadevarapeta,<br>
-                    Kamma Seshayya Ground, Etukuru Road,<br>
-                    Guntur, Andhra Pradesh</p>
+
+                    <p>
+                        Suryadevara Babu Gari House,
+                        Suryadevarapeta,
+                        Kamma Seshayya Ground,
+                        Etukuru Road,
+                        Guntur, Andhra Pradesh
+                    </p>
                 </div>
+
             </div>
 
             <div class="contact-form">
+
                 <form>
-                    <input type="text" placeholder="Parent/Student Name" required>
-                    <input type="tel" placeholder="Contact Number" required>
-                    <textarea placeholder="Tell us which course you are interested in..." rows="5"></textarea>
-                    <button type="submit" class="btn-submit">Inquire Now</button>
+
+                    <input
+                        type="text"
+                        placeholder="Parent/Student Name"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        placeholder="Contact Number"
+                        required
+                    >
+
+                    <textarea
+                        placeholder="Tell us which course you are interested in..."
+                        rows="5"
+                    ></textarea>
+
+                    <button type="submit" class="btn-submit">
+                        Inquire Now
+                    </button>
+
                 </form>
+
             </div>
+
         </div>
+
     </section>
 
+    <!-- FOOTER -->
+
     <footer>
+
         <p><strong>Mounika Sri Academy</strong></p>
+
         <p>An ISO Certified Coaching Institution</p>
-        <p style="font-size: 0.8rem; margin-top: 15px;">&copy; 2024 All Rights Reserved | Etukuru Road, Guntur</p>
+
+        <p style="font-size: 0.8rem; margin-top: 15px;">
+            © 2024 All Rights Reserved |
+            Etukuru Road, Guntur
+        </p>
+
     </footer>
+
+    <!-- SCRIPT -->
+
+    <script>
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+    </script>
 
 </body>
 </html>
